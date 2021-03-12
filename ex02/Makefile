@@ -1,4 +1,4 @@
-NAME		:=	cpp01ex02
+NAME		:=	a.out
 
 SRCS		:=	main.cpp
 
