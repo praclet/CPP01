@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 10:08:10 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/12 14:09:01 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/12 13:58:07 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/12 14:09:27 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
+#include <stdlib.h>
+#include <time.h>
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
-# include <string>
-# include "Zombie.hpp"
+Zombie	*ZombieEvent::randomChum(void)
+{
+	std::string names[]={"Adam", "Arthur", "Guillaume", 
+		"Loïc", "Manon", "Pierre", "Simon"};
+	Zombie	*res = new Zombie(names[std::rand() % 7], this->type);
 
-class ZombieEvent {
-	private:
-		std::string	type;
-	public:
-		ZombieEvent(std::string tp="") : type(tp)
-		{
-		};
-		void setZombieType(std::string tp)
-		{
-			this->type = tp;
-		};
-		Zombie* newZombie(std::string name)
-		{
-			return (new Zombie(name, this->type));
-		};
-		Zombie* randomChum();
-};
-
-#endif
+	res->announce();
+	return (res);
+}

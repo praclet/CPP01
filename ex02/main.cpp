@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:19:38 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/12 13:43:57 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 14:10:54 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,15 @@
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
-Zombie *randomChump()
-{
-	std::string names[]={"Adam", "Arthur", "Guillaume", 
-		"Loïc", "Manon", "Pierre", "Simon"};
-	std::string types[]={"fresh", "rotten", "festering", "newly dead"};
-	(void)rand();
-	Zombie	*res = new Zombie(names[rand() % 7], types[rand() % 4]);
-
-	res->announce();
-	return (res);
-}
-
 int main(void)
 {
-	srand(time(NULL));
+	std::srand(std::time(nullptr));
 	{
-		Zombie	*ptr = randomChump();
+		ZombieEvent	ze;
+		Zombie	*ptr;
+
+		ze.setZombieType("festering");
+		ptr = ze.randomChum();
 		delete ptr;
 	}
 	{
