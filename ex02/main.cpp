@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:19:38 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/12 14:10:54 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 16:37:11 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main(void)
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	{
 		ZombieEvent	ze;
 		Zombie	*ptr;
