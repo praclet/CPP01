@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 09:07:12 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/15 16:42:41 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 17:29:37 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include <iostream>
 
-Zombie::Zombie(std::string nm = "", std::string tp = "") : name(nm), type(tp)
+Zombie::Zombie(std::string nm, std::string tp) : name(nm), type(tp)
 {
 };
 

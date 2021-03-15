@@ -22,8 +22,8 @@ OBJS			:=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 DEP				:=	$(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
 CC				:=	clang++
-CFLAGS			:=	-Wall -Wextra -Werror -I$(HEADERSi_DIR)
-DEPFLAGS		:=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
+CFLAGS			:=	-Wall -Wextra -Werror -I$(HEADERS_DIR)
+DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 
 all				:	$(NAME)
 
@@ -31,7 +31,7 @@ $(NAME)			:	$(OBJS) | $(OBJS_DIR) $(DEP_DIR)
 					$(CC) $(CFLAGS) $(DEPFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)%.o	:	%.cpp $(DEP_DIR)%.d | $(OBJS_DIR) $(DEP_DIR)
-					$(CC) ${CFLAGS} $(DEPFLAGS) -o $@ -c $<
+					$(CC) $(CFLAGS) $(DEPFLAGS) -o $@ -c $<
 
 $(DEP_DIR)		:
 					mkdir -p $(DEP_DIR)
