@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 11:47:30 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/12 09:11:16 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/10 11:34:24 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/15 16:23:40 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ostream>
-#include "Pony.hpp"
+#ifndef PONY_HPP
+# define PONY_HPP
 
-void Pony::do_stuff(std::ostream& os)
-{
-	os << "I'm a pony!" << std::endl;
-	os << "My adequate description is: "
-		<< this->adequate_description << std::endl;
-	os << "Look Ma! I'm doing stuff!" << std::endl;
-}
+# include <string>
+# include <iostream>
+
+class Pony {
+		std::string adequateDescription;
+	public :
+		void doStuff(std::ostream &os) const;
+		void setAdequateDescription(std::string ad);
+		std::string getAdequateDescription(void) const;
+};
+
+#endif

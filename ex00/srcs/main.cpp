@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:19:04 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/12 09:29:24 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 16:23:46 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void ponyOnTheHeap(void)
 {
 	Pony myPony;
 
-	myPony.adequate_description = "That's a good boy! (Heap style.)";
-	myPony.do_stuff(std::cout);
+	myPony.setAdequateDescription("That's a good boy! (Heap style.)");
+	myPony.doStuff(std::cout);
 }
 
 void ponyOnTheStack(void)
@@ -26,8 +26,8 @@ void ponyOnTheStack(void)
 	Pony	*ptr;
 
 	ptr = new Pony();
-	ptr->adequate_description = "That's a good boy! (Stack style.)";
-	ptr->do_stuff(std::cout);
+	ptr->setAdequateDescription("That's a good boy! (Stack style.)");
+	ptr->doStuff(std::cout);
 	delete ptr;
 }
 

@@ -1,37 +1,51 @@
-NAME		:=	pony
+NAME			:=	pony
+SRCS			:=	Pony.cpp \
+					main.cpp
+HEADERS			=	Pony.hpp
 
-SRCS		:=	Pony.cpp \
-				main.cpp
+SRCS_DIR		=	./srcs/
+HEADERS_DIR		=	./headers/
+OBJS_DIR		=	./objs/
+DEP_DIR			=	./dependencies/
 
-CC			:=	clang++
-CFLAGS		:=	-Wall -Wextra -Werror
+#################################################################
 
-RM			:=	rm -f
+vpath				%.cpp $(SRCS_DIR)
+vpath				%.hpp $(HEADERS_DIR)
+vpath				%.o $(OBJS_DIR)
+vpath				%.d $(DEP_DIR)
 
-##########################################################
+OBJS			=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
+DEP				=	$(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
-OBJS		:=	$(SRCS:.cpp=.o)
+CC				=	clang++
+CFLAGS			=	-Wall -Wextra -Werror -I$(HEADERS_DIR)
+DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 
-.SILENT		:
-.PHONY		:	all clean fclean re
+all				:	$(NAME)
 
+$(NAME)			:	$(OBJS) | $(OBJS_DIR) $(DEP_DIR)
+					$(CC) $(CFLAGS) $(DEPFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
-	echo './$@ generated.'
+$(OBJS_DIR)%.o	:	%.cpp $(DEP_DIR)%.d | $(OBJS_DIR) $(DEP_DIR)
+					$(CC) ${CFLAGS} $(DEPFLAGS) -o $@ -c $<
 
-all : $(NAME)
+$(DEP_DIR)		:
+					mkdir -p $(DEP_DIR)
 
-$(NAME)	: $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(NAME)
-	echo './$(NAME) completed.'
+$(OBJS_DIR)		:
+					mkdir -p $(OBJS_DIR)
 
-fclean		: clean
-	$(RM) $(NAME)
-	echo './$(NAME) deleted.'
+clean			:
+					rm -rf $(OBJS_DIR)
 
-clean		:
-	$(RM) $(OBJS)
-	echo './$(OBJS) deleted.'
+fclean			:	clean
+					rm -rf $(DEP_DIR)
+					rm -rf $(NAME)
 
-re			:	fclean all
+re				:	fclean	all
+
+.PHONY			:	all clean fclean re
+
+$(DEP)			:
+include $(wildcard $(DEP))
