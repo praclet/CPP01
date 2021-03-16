@@ -6,12 +6,11 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 13:58:07 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/15 17:29:01 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:23:25 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <time.h>
+#include <chrono>
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
@@ -31,10 +30,12 @@ Zombie* ZombieEvent::newZombie(std::string name) const
 
 Zombie	*ZombieEvent::ZombieEvent::randomChum(void) const
 {
-	std::string names[]={"Adam", "Arthur", "Astrid", "Jean-Michel", "Guillaume", 
-		"Loïc", "Manon", "Pierre", "Simon"};
-	Zombie	*res = new Zombie(names[std::rand() % 7], this->type);
+	std::string names[]={"Adam", "Arthur", "Astrid", "Emil", "Jean-Michel", "Guillaume", 
+		"Loïc", "Manon", "Max", "Pierre", "Simon"};
+	Zombie	*res;
 
+	std::srand(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
+	res = new Zombie(names[std::rand() % 9], this->type);
 	res->announce();
 	return (res);
 }

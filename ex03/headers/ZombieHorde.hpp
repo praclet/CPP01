@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 09:26:25 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/14 09:29:16 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:14:16 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ class ZombieHorde
 	private:
 		int	nbZombie;
 		Zombie[]	*tab;
+	public:
+		ZombieHorde();
 };
 
 #endif

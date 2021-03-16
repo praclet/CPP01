@@ -24,10 +24,10 @@ DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 
 all				:	$(NAME)
 
-$(NAME)			:	$(OBJS) | $(OBJS_DIR) $(DEP_DIR)
+$(NAME)			:	$(OBJS) $(OBJS_DIR) $(DEP_DIR)
 					$(CC) $(CFLAGS) $(DEPFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS_DIR)%.o	:	%.cpp $(DEP_DIR)%.d | $(OBJS_DIR) $(DEP_DIR)
+$(OBJS_DIR)%.o	:	%.cpp $(DEP_DIR)%.d $(OBJS_DIR) $(DEP_DIR)
 					$(CC) ${CFLAGS} $(DEPFLAGS) -o $@ -c $<
 
 $(DEP_DIR)		:
