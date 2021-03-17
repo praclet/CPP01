@@ -1,10 +1,7 @@
-NAME		:=	zombieevent
+NAME			:=	ex04
 
-SRCS		:=	main.cpp \
-				ZombieEvent.cpp \
-				Zombie.cpp
-HEADERS		:=	ZombieEvent.hpp \
-				Zombie.hpp
+SRCS			:=	ex04.cpp
+HEADERS			:=	ex04.hpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/

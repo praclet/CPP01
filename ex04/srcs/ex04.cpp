@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 10:08:10 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/17 14:45:43 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/17 09:20:16 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/17 15:51:30 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
+#include <string>
+#include <iostream>
+#include <iomanip>
 
-# include <string>
-# include "Zombie.hpp"
+int	main(void)
+{
+	std::string	str("HI THIS IS BRAIN");
+	std::string	*ptr_str = &str;
+	std::string	&ref_str = str;
 
-class ZombieEvent {
-	private:
-		std::string	type;
-	public:
-		ZombieEvent(std::string const tp="");
-		void setZombieType(std::string const tp);
-		Zombie* newZombie(std::string const name) const;
-		Zombie* randomChum() const;
-};
-
-#endif
+	std::cout << std::setw(10) << "str" << ": " << str << std::endl;
+	std::cout << std::setw(10) << "ptr_str" << ": " << *ptr_str << std::endl;
+	std::cout << std::setw(10) << "ref_str" << ": " << ref_str << std::endl;
+}
