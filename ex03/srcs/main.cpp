@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/14 09:26:25 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 11:16:05 by praclet          ###   ########lyon.fr   */
+/*   Created: 2021/03/19 09:40:22 by praclet           #+#    #+#             */
+/*   Updated: 2021/03/19 11:24:51 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_HPP
-# define ZOMBIEHORDE_HPP
+#include <chrono>
+#include "ZombieHorde.hpp"
 
-# include "Zombie.hpp"
-
-class ZombieHorde
+int main(void)
 {
-	private:
-		int		nbZombie;
-		Zombie	*tab;
-	public:
-		ZombieHorde(int nb);
-		~ZombieHorde();
-		void announce(void) const;
-};
+	ZombieHorde *zh;
 
-#endif
+	std::srand(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
+	zh = new ZombieHorde(8);
+	zh->announce();
+	delete zh;
+	return (0);
+}

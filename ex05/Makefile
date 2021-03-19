@@ -1,8 +1,6 @@
-NAME			:=	zombiehorde
+NAME			:=	
 
-SRCS			:=	Zombie.cpp	\
-					ZombieHorde.cpp \
-					main.cpp
+SRCS			:=	
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/
@@ -26,10 +24,10 @@ DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 all				:	$(NAME)
 
 $(NAME)			:	$(OBJS) $(OBJS_DIR) $(DEP_DIR)
-					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					$(CC) $(CFLAGS) $(DEPFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)%.o	:	%.cpp $(DEP_DIR)%.d $(OBJS_DIR) $(DEP_DIR)
-					$(CC) $(CFLAGS) $(DEPFLAGS) -o $@ -c $<
+					$(CC) ${CFLAGS} $(DEPFLAGS) -o $@ -c $<
 
 $(DEP_DIR)		:
 					mkdir -p $(DEP_DIR)

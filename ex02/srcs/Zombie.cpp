@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 09:07:12 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/17 14:46:52 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:33:48 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,24 @@ void Zombie::announce(void) const
 	std::cout << "<" << this->name << " (" ;
 	std::cout << this->type << ")> Braiiiiiiinnnssss...";
 	std::cout << std::endl;
+};
+
+std::string const & Zombie::getName(void) const
+{
+	return (this->name);
+};
+
+void Zombie::setName(std::string const name)
+{
+	this->name = name;
+};
+
+std::string const & Zombie::getType(void) const
+{
+	return (this->type);
+};
+
+void Zombie::setType(std::string const type)
+{
+	this->type = type;
 };
