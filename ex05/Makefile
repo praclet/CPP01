@@ -1,6 +1,8 @@
-NAME			:=	
+NAME			:=	ex05
 
-SRCS			:=	
+SRCS			:=	main.cpp \
+					Brain.cpp \
+					Human.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/
