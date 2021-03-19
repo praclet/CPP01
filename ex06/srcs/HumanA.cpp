@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:32:30 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 14:46:03 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 16:01:43 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA
 	private:
 		Weapon &myWeapon;
 	public:
-		HumanA();
+		HumanA(std::string nm, Weapon &wp);
 		void attack(void);
 };
 
