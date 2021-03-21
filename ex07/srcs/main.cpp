@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 11:46:54 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/21 14:21:00 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 14:31:22 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	{
 		for (std::size_t p = s.find(txtin); p != std::string::npos; p = s.find(txtin, p))
 			s.replace(p, txtin.length(), txtout);
-			file2 << s << std::endl;
+		file2 << s << std::endl;
 	}
 	return (0);
 }
