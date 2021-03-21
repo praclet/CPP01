@@ -6,22 +6,20 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:32:30 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 16:01:43 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 09:27:02 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_CPP
-# define HUMANA_CPP
-
+#include <iostream>
+#include <string>
 #include "Weapon.hpp"
+#include "HumanaA.hpp"
 
-class HumanA
+HumanA::HumanA(std::string nm, Weapon &wp) : name(nm), myWeapon(wp)
 {
-	private:
-		Weapon &myWeapon;
-	public:
-		HumanA(std::string nm, Weapon &wp);
-		void attack(void);
-};
+}
 
-#endif
+void HumanA::attack(void)
+{
+	std::cout << NAME << " attacks with his " << WEAPON_TYPE;
+}

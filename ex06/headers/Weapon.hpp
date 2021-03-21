@@ -6,14 +6,14 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:20:37 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 14:28:53 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 09:38:06 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
-# include <strin>
+# include <string>
 
 class Weapon
 {
