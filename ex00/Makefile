@@ -1,7 +1,6 @@
 NAME			:=	pony
 SRCS			:=	Pony.cpp \
 					main.cpp
-HEADERS			=	Pony.hpp
 
 SRCS_DIR		=	./srcs/
 HEADERS_DIR		=	./headers/

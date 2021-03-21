@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 11:34:24 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/17 14:42:49 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 15:56:51 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Pony
 		std::string adequateDescription;
 	public :
 		void doStuff(std::ostream &os) const;
-		void setAdequateDescription(std::string const ad);
+		void setAdequateDescription(std::string const & ad);
 		std::string getAdequateDescription(void) const;
 };
 

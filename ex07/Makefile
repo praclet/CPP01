@@ -18,7 +18,7 @@ OBJS			:=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 DEP				:=	$(addprefix $(DEP_DIR), $(SRCS:.cpp=.d))
 
 CC				:=	clang++
-CFLAGS			:=	-Wall -Wextra -Werror -I$(HEADERS_DIR)
+CFLAGS			:=	-Wall -Wextra -Werror -I$(HEADERS_DIR) -g
 DEPFLAGS		=	-MT $@ -MMD -MP -MF $(DEP_DIR)$*.d
 
 all				:	$(NAME)

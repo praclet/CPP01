@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 09:07:12 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 11:01:13 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 16:12:58 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string const nm, std::string const tp) : name(nm), type(tp)
+Zombie::Zombie(std::string const & nm, std::string const & tp) : name(nm), type(tp)
 {
 };
 
@@ -37,9 +37,9 @@ std::string const & Zombie::getName(void) const
 	return (this->name);
 };
 
-void Zombie::setName(std::string const name)
+void Zombie::setName(std::string const _name)
 {
-	this->name = name;
+	this->name = _name;
 };
 
 std::string const & Zombie::getType(void) const
@@ -47,7 +47,7 @@ std::string const & Zombie::getType(void) const
 	return (this->type);
 };
 
-void Zombie::setType(std::string const type)
+void Zombie::setType(std::string const _type)
 {
-	this->type = type;
+	this->type = _type;
 };

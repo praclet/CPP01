@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 09:48:48 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/19 10:34:13 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 16:07:50 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Zombie {
 		std::string	name;
 		std::string	type;
 	public:
-		Zombie(std::string const nm = "", std::string const tp = "");
+		Zombie(std::string const & nm = "", std::string const & tp = "");
 		~Zombie();
 		void announce(void) const;
 		std::string const & getName(void) const;

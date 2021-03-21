@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 11:47:30 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/17 14:42:00 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 15:57:25 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void Pony::doStuff(std::ostream& os) const
 	os << "Look, Ma! I'm doing stuff!" << std::endl;
 }
 
-void Pony::setAdequateDescription(std::string const ad)
+void Pony::setAdequateDescription(std::string const & ad)
 {
 	this->adequateDescription = ad;
 }

@@ -6,7 +6,7 @@
 /*   By: praclet <praclet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 11:46:54 by praclet           #+#    #+#             */
-/*   Updated: 2021/03/21 14:31:22 by praclet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 16:42:32 by praclet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,14 @@ int main(int argc, char *argv[])
 
 	std::string fileName(argv[1]);
 	std::ifstream file1(fileName);
-	std::ofstream file2(fileName + ".replace");
+	if (!file1)
+	{
+		usage();
+		return (2);
+	}
 
-	if (!file1 || !file2)
+	std::ofstream file2(fileName + ".replace");
+	if (!file2)
 	{
 		usage();
 		return (2);
@@ -40,12 +45,13 @@ int main(int argc, char *argv[])
 	std::string txtin(argv[2]);
 	std::string txtout(argv[3]);
 	std::string s;
-
 	while (getline(file1, s))
 	{
-		for (std::size_t p = s.find(txtin); p != std::string::npos; p = s.find(txtin, p))
+		for (std::size_t p = s.find(txtin); p != std::string::npos;
+				p = s.find(txtin, p + txtout.length()))
 			s.replace(p, txtin.length(), txtout);
 		file2 << s << std::endl;
 	}
+
 	return (0);
 }
