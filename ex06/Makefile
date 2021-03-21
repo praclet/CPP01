@@ -1,6 +1,9 @@
-NAME			:=	
+NAME			:=	ex06
 
-SRCS			:=	
+SRCS			:=	main.cpp \
+					HumanA.cpp	\
+					HumanB.cpp	\
+					Weapon.cpp
 
 SRCS_DIR		:=	./srcs/
 HEADERS_DIR		:=	./headers/
